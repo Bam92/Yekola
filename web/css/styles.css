@@ -1,0 +1,17 @@
+body {
+    padding-top: 50px;
+}
+
+.footer {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+#footer_logo, #terms, #about {
+  display: inline-block;
+  vertical-align: top;
+}
+#about ul {
+  display: inline-block;
+  vertical-align: top;
+}
