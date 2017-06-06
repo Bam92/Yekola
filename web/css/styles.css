@@ -11,7 +11,27 @@ body {
   display: inline-block;
   vertical-align: top;
 }
-#about ul {
-  display: inline-block;
-  vertical-align: top;
+.navbar-inverse .navbar-nav > li > a {
+    color: #171817;
+}
+.navbar {
+  min-height: 70px;
+}
+
+.navbar-inverse {
+  background-color: white;
+  border-color: white;
+  color: black;
+}
+
+/*
+ * Cover
+ */
+
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
 }

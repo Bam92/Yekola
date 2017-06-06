@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -5,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    {% block stylesheets %}
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
-    <title>Yekola - (ton education a porte de tes mains) pour que toutes les filles africaines ne puissent plus jamais manquer des ressources pedagogique</title>
+    {% endblock %}
+    <title>{% block title "Yekola - ton education à porté de tes mains!" %}</title>
 </head>
 <body>
     <div class="container">
@@ -20,17 +23,20 @@
                     </button>
                     <a class="navbar-brand" href="">Yekola</a>
                 </div>
-                <div>Bibliotheque</div>
-                <div class="collapse navbar-collapse" id="navbar-collapse-target">Bibliotheque
+                <ul class="nav navbar-nav">
+                    <li> <a href ="#"> Bibliotheque </a> </li>
+                    <li> <a href ="#"> Scolarite </a> </li>
+                    <li> <a href ="#"> SOS </a> </li>
+                    <li> <a href ="#"> Succes </a> </li>
+                    <li> <a href ="#"> Forum </a> </li>
+                </ul>
+                <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 </div>
+
             </div><!-- /.container -->
         </nav>
-        <section>
-            <h2>La solution pour ton probleme d'education est la</h2>
-            <p>Plus de soucis, tout est a la porte de ta main maintenant</p>
+        {% block content "" %}
 
-            <button>DECOUVRIR</button>
-        </section>
         <footer class="footer">
             <div id="footer_logo">Yekola<div>
             <div id="terms">
@@ -47,5 +53,8 @@
             </div>
         </footer>
     </div>
+    {% block javascripts %}
+      <script src="js/jquery.js"></script>
+    {% endblock %}
 </body>
 </html>
