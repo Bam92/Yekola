@@ -12,7 +12,7 @@
     <title>{% block title "Yekola - ton education à porté de tes mains!" %}</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -30,6 +30,10 @@
                     <li> <a href ="#"> Succes </a> </li>
                     <li> <a href ="#"> Forum </a> </li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+               </ul>
                 <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 </div>
 
@@ -37,7 +41,7 @@
         </nav>
         {% block content "" %}
 
-        <footer class="footer">
+        <footer class="navbar navbar-fixed-bottom">
             <div id="footer_logo">Yekola<div>
             <div id="terms">
                <ul>
@@ -47,8 +51,8 @@
             </div>
             <div id="about">
                <ul>
-                  <li>A propos</li>
                   <li>Bibliotheque</li>
+                  <li>A propos</li>
                </ul>
             </div>
         </footer>

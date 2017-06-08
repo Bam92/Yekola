@@ -1,18 +1,20 @@
         {% extends "layout.html.twig" %}
 
         {% block content %}
-        <div class="cover-container">
-        <div class="inner cover">
-          <h1 class="cover-heading">La solution pour ton probleme d'education est la.</h1>
-          <p class="lead">Plus de soucis, tout est à la porté de ta main maintenant</p>
-          <p class="lead">
+        <div id="home-block">
+          <div class="home-title">Yekola, pour que toutes les filles rejoignent l'ecole.<!--La solution pour ton problème d'éducation est la.--></div>
+          <div class="home-title-sub">Plus de soucis, tout est à la porté de ta main maintenant</div>
+          <div class="call-to-action-discover">
             <a href="#" class="btn btn-lg btn-default">Découvrir</a>
-          </p>
+          </div>
         </div>
-        </div>
+        <video autoplay loop muted id="bg_video">
+           <source src="{{ asset('/images/home-video.mp4') }}" alt="" type="video/mp4">
+           <source src="movie.ogg" type="video/ogg">
+        </video>
         {% endblock %}
 
         {% block stylesheets %}
         	{{ parent() }}
-            <link href="{{ asset('/css/cover.css') }}" rel="stylesheet">
+            <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
         {% endblock %}
