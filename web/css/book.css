@@ -1,0 +1,16 @@
+.book-item-box {
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid #bebebe;
+    border-bottom-width: 3px;
+    display: block;
+    text-decoration: none;
+    min-height: 128px;
+    max-width: 220px;
+}
+img {
+    margin-top: 5px;
+    max-height: 144px;
+    text-align: center;
+    visibility: visible;
+}

@@ -19,6 +19,6 @@ $app->register(new Silex\Provider\AssetServiceProvider(), array(
 //$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Register services.
-$app['dao.article'] = function ($app) {
+$app['dao.book'] = function ($app) {
     return new Yekola\DAO\BookDAO($app['db']);
 };

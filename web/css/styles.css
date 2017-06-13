@@ -1,38 +1,10 @@
-body {
-    padding-top: 50px;
-    padding-bottom: 70px;
-}
-
-.footer {
-   padding-top: 2.5rem !important;
-   padding-bottom: 2.5rem !important;
-}
-
-#footer_logo, #terms, #about {
-  display: inline-block;
-  vertical-align: top;
-}
-.navbar-inverse .navbar-nav > li > a {
-    color: #171817;
-}
-.navbar {
-  min-height: 70px;
-}
-
-.navbar-inverse {
-  background-color: white;
-  border-color: white;
-  color: black;
-}
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
+#navigation {
+    background: rgba(0,0,0,.8);
+    height: 100%;
+    position: fixed;
+    height: 100%;
+    /*width: 330px;*/
+    padding: 5em 0 0;
+    text-align: center;
+    color: #999;
 }

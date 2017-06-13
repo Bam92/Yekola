@@ -1,0 +1,14 @@
+        {% extends "layout.html.twig" %}
+
+        {% block content %}
+         {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <small>{{ book.author }}, {{ book.category }}, {{ book.editor }}</small>
+   <article>{{ book.description }}</article>
+         {% endfor %}
+        {% endblock %}
+
+        {% block stylesheets %}
+        	{{ parent() }}
+            <link href="{{ asset('/css/book.css') }}" rel="stylesheet">
+        {% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+  <h1>Parrainez ces filles...</h1>
+  <p>... afin qu'elles puissent accéder à l'éducation.<br />
+  Vous aurez une éternelle gratitude de leur part!</p>
+  <div class="form-group">
+    <input type="search" class="input-sm form-control" placeholder="chercher un pays">
+    <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Chercher</button>
+  </div>
+</div>
+</div>
+<div class="col-md-4">
+   <div class="col-md-2"><button class="btn-primary">Déposerune demande</button></div>
+   <div class="col-md-2"><button class="btn-primary">Parrainer</button></div>
+</div>
+</div>
+</div>
+<div class="important"># demandes encours dont # au pays</div>
+
+<section class="row" id="top-recent-need">
+  {#display 10 needs per page#}
+    <div class="col-md-offset-1 col-md-2">
+        <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img thumbnail" />
+    </div>
+    <div class="col-md-8 col-md-offset-1">
+        text here
+    </div>
+
+</section>
+
+<section class="row" id="need-other">
+   <h1>Des demandes ailleurs en Afrique</h1>
+   {#Cartographie#}
+   <label class="form-label" for="place">Pays</label><input type="text" id="place">
+</section>
+
+<section class="row" id="need-done">
+<h1>Des demandes ailleurs en Afrique</h1>
+{#display 10 needs per page#}
+  <div class="col-md-offset-1 col-md-2">
+      <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img thumbnail" />
+  </div>
+  <div class="col-md-8 col-md-offset-1">
+      text here
+  </div>
+</section>
+
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+    <link href="{{ asset('/css/book.css') }}" rel="stylesheet">
+{% endblock %}

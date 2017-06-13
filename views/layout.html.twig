@@ -8,41 +8,46 @@
     <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     {% block stylesheets %}
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     {% endblock %}
-    <title>{% block title "Yekola - ton education à porté de tes mains!" %}</title>
+    <title>{% block title "Yekola - ton éducation à porté de tes mains!" %}</title>
 </head>
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-            <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-target">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="">Yekola</a>
+                    <a class="navbar-brand" href="/Yekola/web">Yekola</a>
+
                 </div>
+                <div class="container">
                 <ul class="nav navbar-nav">
-                    <li> <a href ="#"> Bibliotheque </a> </li>
-                    <li> <a href ="#"> Scolarite </a> </li>
-                    <li> <a href ="#"> SOS </a> </li>
-                    <li> <a href ="#"> Succes </a> </li>
-                    <li> <a href ="#"> Forum </a> </li>
+                    <li> <a href ="books"> Bibliothèque </a> </li>
+                    <li> <a href ="schooling"> Scolarité</a> </li>
+                    <li> <a href ="sos"> SOS </a> </li>
+                    <li> <a href ="success_story"> Succès </a> </li>
+                    <li> <a href ="forum"> Forum </a> </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Inscription</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
                </ul>
                 <div class="collapse navbar-collapse" id="navbar-collapse-target">
                 </div>
-
+              </div>
             </div><!-- /.container -->
         </nav>
+      </div><!-- /.container-fluid -->
+
+      <div class="container">
         {% block content "" %}
 
-        <footer class="navbar navbar-fixed-bottom">
-            <div id="footer_logo">Yekola<div>
+        <footer class="navbar navbar-bottom">
+            <div id="footer_logo">Yekola</div>
             <div id="terms">
                <ul>
                   <li>Contact</li>
@@ -51,14 +56,17 @@
             </div>
             <div id="about">
                <ul>
-                  <li>Bibliotheque</li>
+                  <li>Bibliothèque</li>
                   <li>A propos</li>
                </ul>
             </div>
         </footer>
     </div>
     {% block javascripts %}
-      <script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
     {% endblock %}
 </body>
 </html>

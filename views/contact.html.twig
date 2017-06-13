@@ -1,0 +1,11 @@
+        {% extends "layout.html.twig" %}
+
+        {% block content %}
+        <div id="home-block">
+          <div class="home-title">Yekola, pour que toutes les filles rejoignent l'ecole.<div>Je suis la</div>
+        {% endblock %}
+
+        {% block stylesheets %}
+        	{{ parent() }}
+            <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
+        {% endblock %}

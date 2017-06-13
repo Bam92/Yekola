@@ -1,11 +1,105 @@
         {% extends "layout.html.twig" %}
 
         {% block content %}
+
+        <div class="jumbotron">
+        <div class="container">
+          <h1>Page title here</h1>
+          <p>Sub title here</p>
+          <div class="pull-right"><button class="btn-primary">Ajouter un livre</button></div>
+          <div class="form-group">
+            <input type="search" class="input-sm form-control" placeholder="Que voulez-vous lire aujourd'hui?">
+            <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Chercher</button>
+          </div>
+        </div>
+       </div>
+           <nav class="row col-md-12 region region-navigation">
+              <ul>
+                  <li class="region-books col-md-6">Bibliothèque</li>
+                  <li class="region-quiz col-md-6">Quiz & exercices</li>
+              </ul>
+           </nav>
+
+           <section class="col-md-12 recent" id="recent-books">
+           <h1>Ouvrages récement ajoutés</h1>
+           <p>Recently added books will be here, limit 4</p>
+           <p class="">
+           <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img"/>
+           {#<div class="book-info row">
+           <h3>Title</h3>
+           <p>Editor</p>
+           <p>Author</p>
+           </div>#}
+           </p>
+
+           <p class="book-item-box"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           <p class=""><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           <p class=""><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           </section>
+
+           <section class="col-md-12 popular" id="last-books-read">
+           <h1>Ouvrages les plus populaires</h1>
+           <p>Most read books here, limit 4</p>
+           <p class="col-md-3">
+           <img src="{{ asset('/images/ebook.jpg') }}" alt="test" />
+           {#<div class="book-info row">
+           <h3>Title</h3>
+           <p>Editor</p>
+           <p>Author</p>
+           </div>#}
+           </p>
+           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           </section>
+
+           <section class="col-md-12 recent" id="recent-quiz">
+           <h1>Meilleurs scores de quiz</h1>
+           <p>Last quizes scores, limit 4</p>
+           </section>
+
+           <section class="row col-md-12">
+
+         <aside class="col-md-3">
+         <div id="category_title">Catégorie</div>
          {% for book in books %}
-        <h2>{{ book.title }}</h2>
-        <small>{{ book.author }}, {{ book.category }}, {{ book.editor }}</small>
-   <article>{{ book.description }}</article>
+         <ul id="category_item">
+            <li>{{ book.category }}</li>
+         </ul>
          {% endfor %}
+
+         <div id="book_editor">Editeur</div>
+          {% for book in books %}
+         <ul id="editor_item">
+            <li>{{ book.editor }}</li>
+         </ul>
+         {% endfor %}
+         </aside>
+         <div id="list_books" class="col-md-9">
+          {% for book in books %}
+         <div class="col-md-3" id="book_item">
+         <h3>{{ book.title }}</h3>
+        <small>{{ book.author }}, {{ book.editor }}</small>
+          <article>{{ book.description }}</article>
+        </div>
+        {% endfor %}
+
+        </div>
+
+
+
+        </section>
+        <p>This a test</p>
+          {% set categoryArray = [] %}
+
+   {% for book in books %}
+       {% if book not in categoryArray %}
+       <ul id="category_item>
+           <li>{{ book.category }}<li>
+       </ul>
+       {% set categoryArray[] = categoryArray %}
+   {% endif %}
+{% endfor %}
         {% endblock %}
 
         {% block stylesheets %}

@@ -3,8 +3,9 @@
 namespace Yekola\DAO;
 
 use Doctrine\DBAL\Connection;
+use Yekola\Domain\Book;
 
-abstract class DAO 
+abstract class DAO
 {
     /**
      * Database connection

@@ -2,9 +2,10 @@
 
 namespace Yekola\DAO;
 
-use Yekola\Domaine\Yekola;
+use Doctrine\DBAL\Connection;
+use Yekola\Domaine\Book;
 
-class YekolaDAO extends DAO
+class BookDAO extends DAO
 {
     /**
      * Return a list of all books, sorted by book_title asc.
@@ -12,7 +13,7 @@ class YekolaDAO extends DAO
      * @return array A list of all articles.
      */
     public function findAll() {
-        $sql = "select * from yekola order by book_title asc";
+        $sql = "select * from book order by book_title asc";
         $result = $this->getDb()->fetchAll($sql);
 
         // Convert query result to an array of domain objects
@@ -23,6 +24,20 @@ class YekolaDAO extends DAO
         }
         return $books;
     }
+
+  public function findCategories() {
+        $sql = "select book_id, book_category from book order by book_category asc";
+        $result = $this->getDb()->fetchAll($sql);
+
+        // Convert query result to an array of domain objects
+        $categories = array();
+        foreach ($result as $row) {
+            $bookId = $row['book_id'];
+            $categories[$bookId] = $this->buildDomainObject($row);
+        }
+        return $categories;
+    }
+
 
      /**
 
@@ -122,7 +137,7 @@ class YekolaDAO extends DAO
         $book->setAuthor($row['book_author']);
         $book->setCategory($row['book_category']);
         $book->setEditor($row['book_editor']);
-        $book->setDescription($row['book_content']);
+        $book->setDescription($row['book_description']);
         return $book;
     }
 }
