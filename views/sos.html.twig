@@ -9,21 +9,31 @@
   <h1>Parrainez ces filles...</h1>
   <p>... afin qu'elles puissent accéder à l'éducation.<br />
   Vous aurez une éternelle gratitude de leur part!</p>
-  <div class="form-group">
+  <!--<div class="form-group">
     <input type="search" class="input-sm form-control" placeholder="chercher un pays">
     <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Chercher</button>
-  </div>
+  </div>-->
 </div>
 </div>
 <div class="col-md-4">
    <div class="col-md-2"><button class="btn-primary">Déposerune demande</button></div>
-   <div class="col-md-2"><button class="btn-primary">Parrainer</button></div>
+   <!--div class="col-md-2"><button class="btn-primary">Parrainer</button></div-->
+   <div class="col-md-2"><a href = "#" id = "pop" class = "btn btn-info "data-toggle = "popover" data-html = "true"
+   data-content = "<em>Selectionnez un-e filleul-e et cliquez sur Parrainer pour afficher le détail du-de la filleul-e</em > "
+   title = " <h3> Pour parrainer</h3> ">
+  Comment parrainer ?
+  </a>
+  </div>
 </div>
 </div>
 </div>
-<div class="important"># demandes encours dont # au pays</div>
 
 <section class="row" id="top-recent-need">
+  <h1>Demandes en cours</h1>
+  {#possibilité intégrer Cartographie#}
+  <label class="form-label" for="place">Pays</label><input type="search" id="place">
+  <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Afficher</button>
+  <div class="important">Il y a actuellement # demandes en cours dont # dans votre pays (nom pays)</div>
   {#display 10 needs per page#}
     <div class="col-md-offset-1 col-md-2">
         <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img thumbnail" />
@@ -34,14 +44,8 @@
 
 </section>
 
-<section class="row" id="need-other">
-   <h1>Des demandes ailleurs en Afrique</h1>
-   {#Cartographie#}
-   <label class="form-label" for="place">Pays</label><input type="text" id="place">
-</section>
-
 <section class="row" id="need-done">
-<h1>Des demandes ailleurs en Afrique</h1>
+<h1>Demandes traitées</h1>
 {#display 10 needs per page#}
   <div class="col-md-offset-1 col-md-2">
       <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img thumbnail" />
@@ -51,9 +55,27 @@
   </div>
 </section>
 
+<section class="row" id="sensibilisation">
+<h1>Sensibilisation</h1>
+  <div class="col-md-8">
+      Papa, maman donnez la chance à tous vos enfants, et même les filles d'aller à
+      l'école.
+  </div>
+</section>
+
 {% endblock %}
 
 {% block stylesheets %}
   {{ parent() }}
     <link href="{{ asset('/css/book.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+<script>
+ $(function () {
+   $("#pop").popover();
+ });
+</script>
+
+
 {% endblock %}

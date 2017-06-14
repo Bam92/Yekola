@@ -61,19 +61,33 @@
            <section class="row col-md-12">
 
          <aside class="col-md-3">
-         <div id="category_title">Catégorie</div>
-         {% for book in books %}
-         <ul id="category_item">
-            <li>{{ book.category }}</li>
-         </ul>
+         <div id="category_title">Catégorie:</div>
+
+         {% set categoryArray = [] %}
+
+         {% for book  in books %}
+             {% if book.category not in categoryArray %}
+                 <ul id="category_item">
+                     <li>{{ book.category }} ({{ loop.index0 }})</li>
+                 </ul>
+                 {% set categoryArray = categoryArray|merge([book.category])  %}
+             {% endif %}
          {% endfor %}
 
          <div id="book_editor">Editeur</div>
-          {% for book in books %}
-         <ul id="editor_item">
-            <li>{{ book.editor }}</li>
-         </ul>
+
+
+         {% set editorArray = [] %}
+
+         {% for book  in books %}
+             {% if book.editor not in  editorArray %}
+                 <ul id="category_item">
+                     <li>{{ book.editor }}</li>
+                 </ul>
+                 {% set  editorArray =  editorArray|merge([book.editor])  %}
+             {% endif %}
          {% endfor %}
+
          </aside>
          <div id="list_books" class="col-md-9">
           {% for book in books %}
@@ -89,18 +103,35 @@
 
 
         </section>
-        <p>This a test</p>
-          {% set categoryArray = [] %}
+        <section class="row">
+        <h1>This a test and will be deleted after success</h1>
 
-   {% for book in books %}
-       {% if book not in categoryArray %}
-       <ul id="category_item>
-           <li>{{ book.category }}<li>
-       </ul>
-       {% set categoryArray[] = categoryArray %}
-   {% endif %}
+{% set categoryArray = [] %}
+
+{% for book  in books %}
+    {% if book.category not in categoryArray %}
+        <ul id="category_item">
+            <li>{{ book.category }}</li>
+        </ul>
+        {% set categoryArray = categoryArray|merge([book.category])  %}
+    {% endif %}
 {% endfor %}
+
+<h2>Test again</h2>
+{% for book  in books %}
+
+        <ul id="category_item">
+            <li>{{ book.category }}</li>
+        </ul>
+
+{% endfor %}
+  </section>
+
         {% endblock %}
+
+
+
+
 
         {% block stylesheets %}
         	{{ parent() }}
