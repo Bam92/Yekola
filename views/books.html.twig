@@ -6,17 +6,42 @@
         <div class="container">
           <h1>Page title here</h1>
           <p>Sub title here</p>
-          <div class="pull-right"><button class="btn-primary">Ajouter un livre</button></div>
+          <div class="pull-right"><button class="btn btn-primary">Ajouter un livre</button></div>
           <div class="form-group">
             <input type="search" class="input-sm form-control" placeholder="Que voulez-vous lire aujourd'hui?">
             <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Chercher</button>
           </div>
+
+          <section id="search-container">
+          <hr class="divider short"/>
+          <div class="search-box form-group">
+          <form target="blank" id="search-form" action="https://www.google.com/#q=site:http://www.leeroy.me">
+          <i class="icon icon-search" id="search-icon"></i>
+          <input class="" id="search-input" maxlength="255" type="search" name="search" placeholder="What are you looking for?"/>
+          </form>
+          </div>
+          </section>
         </div>
        </div>
            <nav class="row col-md-12 region region-navigation">
-              <ul>
-                  <li class="region-books col-md-6">Bibliothèque</li>
-                  <li class="region-quiz col-md-6">Quiz & exercices</li>
+              <ul book_nav>
+                  <li class="region-books col-md-6 dropdown">
+                      <a data-toggle="dropdown" href="#">Bibliothèque<b class="carret">
+                      </b></a>
+                      <ul class="dropdown-menu"">
+                          {% set categoryArray = [] %}
+
+                          {% for book  in books %}
+                              {% if book.category not in categoryArray %}
+
+                                      <li><a href="#">{{ book.category }}</a></li>
+
+                                  {% set categoryArray = categoryArray|merge([book.category])  %}
+                              {% endif %}
+                          {% endfor %}
+                        </ul>
+                  </li>
+                  <li class="region-quiz col-md-6"><a href="#">Quiz & exercices</a></li>
               </ul>
            </nav>
 
