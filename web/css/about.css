@@ -1,0 +1,33 @@
+body {
+  padding-top: 40px;
+}
+
+.content-link-main {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  display: flex !important;
+}
+
+.content-link-2nd {
+  flex-basis: 50% !important;
+  max-width: 50% !important;
+}
+
+.blue-iron-line {
+  height: 42px;
+  border: 1px solid #4fc1b5;
+}
+
+.border-top-none {
+  border-top: none !important;
+}
+.border-bottom-none {
+  border-bottom: none !important;
+}
+
+.border-right-none {
+  border-right: none !important;
+}
+.border-left-none {
+  border-left: none !important;
+}

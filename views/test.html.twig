@@ -1,0 +1,20 @@
+        {% extends "layout.html.twig" %}
+
+        {% block content %}
+        <div id="home-block">
+          <div class="home-title">Yekola, pour que toutes les filles<br /> rejoignent l'ecole.<!--La solution pour ton problème d'éducation est la.--></div>
+          <div class="home-title-sub">Plus de soucis, tout est à la porté de ta main maintenant</div>
+          <div class="call-to-action-discover">
+            <a href="about" class="btn btn-lg btn-default">Découvrir</a>
+          </div>
+        </div>
+        <video autoplay loop muted id="bg_video">
+           <source src="{{ asset('/images/home-video.mp4') }}" alt="" type="video/mp4">
+           <source src="movie.ogg" type="video/ogg">
+        </video>
+        {% endblock %}
+
+        {% block stylesheets %}
+        	{{ parent() }}
+            <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
+        {% endblock %}

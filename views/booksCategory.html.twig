@@ -32,7 +32,7 @@
                           {% set categoryArray = [] %}
                           {% for book  in books %}
                               {% if book.category not in categoryArray %}
-                                      <li><a href="books/{{ book.category }}">{{ book.category }}</a></li>
+                                      <li><a href="#">{{ book.category }}</a></li>
                                   {% set categoryArray = categoryArray|merge([book.category])  %}
                               {% endif %}
                           {% endfor %}

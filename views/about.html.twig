@@ -1,20 +1,84 @@
         {% extends "layout.html.twig" %}
 
         {% block content %}
-        <div id="home-block">
-          <div class="home-title">Yekola, pour que toutes les filles rejoignent l'ecole.<!--La solution pour ton problème d'éducation est la.--></div>
-          <div class="home-title-sub">Plus de soucis, tout est à la porté de ta main maintenant</div>
-          <div class="call-to-action-discover">
-            <a href="#" class="btn btn-lg btn-default">Découvrir</a>
-          </div>
-        </div>
-        <video autoplay loop muted id="bg_video">
-           <source src="{{ asset('/images/home-video.mp4') }}" alt="" type="video/mp4">
-           <source src="movie.ogg" type="video/ogg">
-        </video>
+            <div class="about-header">
+               <h1>Yekola est une appli éducative pour la jeune fille africaine</h1>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididu</p>
+            </div>
+
+            <div class="row">
+               <div class="col-md-6">
+                  <img src="{{ asset('/images/library.jpg') }}" alt="test" />
+               </div>
+               <div class="col-md-6">
+               <h2>Une bibliothèque virtuelle</h2>
+               <p>Avec plus de # ouvrages (texte, audio ou vidéo) à ta disposition. Lorem ipsum dolor sit amet,
+               onsectetur adipisicing elit, sed do eiusmod tempor incididu<p>
+               </div>
+            </div>
+
+           <!--border @the bottom of the row-->
+            <div class="row content-link-main">
+               <div class="xs-hide col-md-offset-2 col-md-8 content-link-2nd">
+                  <div class="blue-iron-line border-top-none border-right-none"></div>
+                  <div class="blue-iron-line border-top-none border-left-none border-bottom-none"></div>
+               </div>
+            </div>
+
+            <div class="row">
+
+               <div class="col-md-6">
+               <h2>Une bibliothèque virtuelle</h2>
+               <p>Avec plus de # ouvrages (texte, audio ou vidéo) à ta disposition. Lorem ipsum dolor sit amet,
+               onsectetur adipisicing elit, sed do eiusmod tempor incididu<p>
+               </div>
+               <div class="col-md-6">
+                  <img src="{{ asset('/images/library.jpg') }}" alt="test" />
+               </div>
+            </div>
+
+            <!--border @the bottom of the row-->
+             <div class="row content-link-main">
+                <div class="xs-hide col-md-offset-2 col-md-8 content-link-2nd">
+                   <div class="blue-iron-line border-top-none border-left-none"></div>
+                   <div class="blue-iron-line border-top-none border-right-none border-bottom-none"></div>
+                </div>
+             </div>
+
+            <div class="row">
+               <div class="col-md-6">
+                  <img src="{{ asset('/images/library.jpg') }}" alt="test" />
+               </div>
+               <div class="col-md-6">
+               <h2>Une bibliothèque virtuelle</h2>
+               <p>Avec plus de # ouvrages (texte, audio ou vidéo) à ta disposition. Lorem ipsum dolor sit amet,
+               onsectetur adipisicing elit, sed do eiusmod tempor incididu<p>
+               </div>
+            </div>
+
+            <!--border @the bottom of the row-->
+             <div class="row content-link-main">
+                <div class="xs-hide col-md-offset-2 col-md-8 content-link-2nd">
+                   <div class="blue-iron-line border-top-none border-right-none"></div>
+                   <div class="blue-iron-line border-top-none border-left-none border-bottom-none"></div>
+                </div>
+             </div>
+
+            <div class="row">
+
+               <div class="col-md-6">
+               <h2>Une bibliothèque virtuelle</h2>
+               <p>Avec plus de # ouvrages (texte, audio ou vidéo) à ta disposition. Lorem ipsum dolor sit amet,
+               onsectetur adipisicing elit, sed do eiusmod tempor incididu<p>
+               </div>
+               <div class="col-md-6">
+                  <img src="{{ asset('/images/library.jpg') }}" alt="test" />
+               </div>
+            </div>
+
         {% endblock %}
 
         {% block stylesheets %}
         	{{ parent() }}
-            <link href="{{ asset('/css/home.css') }}" rel="stylesheet">
+            <link href="{{ asset('/css/about.css') }}" rel="stylesheet">
         {% endblock %}

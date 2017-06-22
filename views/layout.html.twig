@@ -5,10 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
     {% block stylesheets %}
     <link href="{{ asset('/css/styles.css') }}" rel="stylesheet">
+      <link href="{{ asset('/lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/font-awesome.min.css.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stlesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% endblock %}
     <title>{% block title "Yekola - ton éducation à porté de tes mains!" %}</title>
 </head>
@@ -26,9 +29,10 @@
                 </div>
                 <div class="container">
                 <ul class="nav navbar-nav">
-                    <li> <a href ="books"> Bibliothèque </a> </li>
-                    <li> <a href ="schooling">Parrainage</a> </li>
-                    <li> <a href ="sos">Scolarité</a> </li>
+                    <li> <a href ="books"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;
+                        Bibliothèque </a> </li>
+                    <li> <a href ="sos"><i class="fa fa-twitter fa-3x"></i>Parrainage</a> </li>
+                    <li> <a href ="schooling">Scolarité</a> </li>
                     <li> <a href ="success_story"> Succès </a> </li>
                     <li> <a href ="forum"> Forum </a> </li>
                 </ul>
