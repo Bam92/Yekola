@@ -1,14 +1,61 @@
-        {% extends "layout.html.twig" %}
+{% extends "layout.html.twig" %}
 
-        {% block content %}
-         {% for book in books %}
-        <h2>{{ book.title }}</h2>
-        <small>{{ book.author }}, {{ book.category }}, {{ book.editor }}</small>
-   <article>{{ book.description }}</article>
-         {% endfor %}
-        {% endblock %}
+{% block content %}
+    <div class="jumbotron">
+    <div class="container">
+      <h1>Page title here</h1>
+      <p>Sub title here</p>
 
-        {% block stylesheets %}
-        	{{ parent() }}
-            <link href="{{ asset('/css/book.css') }}" rel="stylesheet">
-        {% endblock %}
+      <div class="form-group">
+        <input type="search" class="input-sm form-control" placeholder="Do search here">
+        <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span>Chercher</button>
+      </div>
+
+      <section id="search-container">
+      <hr class="divider short"/>
+      <div class="search-box form-group">
+      <form target="blank" id="search-form" action="https://www.google.com/#q=site:http://www.leeroy.me">
+      <i class="icon icon-search" id="search-icon"></i>
+      <input class="" id="search-input" maxlength="255" type="search" name="search" placeholder="What are you looking for?"/>
+      </form>
+      </div>
+      </section>
+    </div>
+    </div>
+
+    <div class="row">
+      <h1>Taux de scolarisation dans votre pays (nom_pays): .... % contre .... % en Afrique*</h1>
+      <small>*Taux calculé par rapport au nombre de filles Lorem ipsum. Vous êtes élève? <a href="#">Connectez-vous</a></small>
+    </div>
+
+    <section class="row">
+    <h1>Filles scolarisées</h1>
+    <hr />
+    </section>
+
+    <section class="row">
+    <h1>Filles non scolarisées</h1>
+    </section>
+
+    <hr />
+    <section class="row">
+    <button class="btn btn-primary col-md-6">Je cherche une école</button>
+    <button class="btn btn-primary col-md-6">Je cherche une école</button>
+    </section>
+
+{% endblock %}
+
+{% block stylesheets %}
+  {{ parent() }}
+    <link href="{{ asset('/css/book.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+<script>
+ $(function () {
+   $("#pop").popover();
+ });
+</script>
+
+
+{% endblock %}

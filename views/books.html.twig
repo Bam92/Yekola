@@ -23,7 +23,8 @@
           </section>
         </div>
        </div>
-           <nav class="row col-md-12 region region-navigation">
+           <div class="row">
+           <nav class="col-md-12 region region-navigation">
               <ul class="book_nav">
                   <li class="region-books col-md-6 dropdown">
                       <a data-toggle="dropdown" href="#">Bibliothèque<b class="carret">
@@ -41,38 +42,70 @@
                   <li id="region-quiz col-md-6"><a href="#">Quiz & exercices</a></li>
               </ul>
            </nav>
+           </div>
 
+           <div class="row">
            <section class="col-md-12 recent" id="recent-books">
-           <h1>Ouvrages récement ajoutés</h1>
-           <p>Recently added books will be here, limit 4</p>
-           <p class="">
-           <img src="{{ asset('/images/ebook.jpg') }}" alt="test" class="book-item-img"/>
-           {#<div class="book-info row">
-           <h3>Title</h3>
-           <p>Editor</p>
-           <p>Author</p>
-           </div>#}
-           </p>
+               <h1>Ouvrages récement ajoutés</h1>
+               <p>Recently added books will be here, limit 8</p>
 
-           <p class="book-item-box"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
-           <p class=""><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
-           <p class=""><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+               {% for book in books|slice (0, 8) %}
+               <div class="book-item-img">
+              <div class="col-md-3" id="book_item">
+              <a href="#">
+                <span class"hidden">{{ book.title }}</span>
+                <div class="illustration">
+                   <img class="bookListItem_img" src="{{ asset('/images/ebook.jpg') }}" alt="test" />
+                </div>
+                <h3 class="bookItem_title">{{ book.title }}</h3>
+                <div class="libraryItem_detail">
+                   <div class="libraryItem_description">
+                      <div class="libraryItem_descriptionTitle">{{ book.title }}</div>
+                      <div class="libraryItem_descriptionContent">{{ book.description }}</div>
+                   </div>
+                   <ul class="bookListItem_authors">
+                      <li class="bookListItem_authors_editor">{{ book.editor }}</li>
+                      <li class="bookListItem_authors_author">{{ book.author }}</li>
+                   </ul>
+                </div>
+               </a>
+             </div>
+             </div>
+             {% endfor %}
+
+               <!--p class="book-item-box"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p-->
+
            </section>
 
+           </div>
            <section class="col-md-12 popular" id="last-books-read">
            <h1>Ouvrages les plus populaires</h1>
-           <p>Most read books here, limit 4</p>
-           <p class="col-md-3">
-           <img src="{{ asset('/images/ebook.jpg') }}" alt="test" />
-           {#<div class="book-info row">
-           <h3>Title</h3>
-           <p>Editor</p>
-           <p>Author</p>
-           </div>#}
-           </p>
-           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
-           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
-           <p class="col-md-3"><img src="{{ asset('/images/ebook.jpg') }}" alt="test" /></p>
+           <p>Well noted books here, limit 8</p>
+           {% for book in books|slice (0, 8) %}
+           <div class="book-item-img">
+          <div class="col-md-3" id="book_item">
+          <a href="#">
+            <span class"hidden">{{ book.title }}</span>
+            <div class="illustration">
+               <img class="bookListItem_img" src="{{ asset('/images/ebook.jpg') }}" alt="test" />
+            </div>
+            <h3 class="bookItem_title">{{ book.title }}</h3>
+            <div class="libraryItem_detail">
+               <div class="libraryItem_description">
+                  <div class="libraryItem_descriptionTitle">{{ book.title }}</div>
+                  <div class="libraryItem_descriptionContent">{{ book.description }}</div>
+               </div>
+               <ul class="bookListItem_authors">
+                  <li class="bookListItem_authors_editor">{{ book.editor }}</li>
+                  <li class="bookListItem_authors_author">{{ book.author }}</li>
+               </ul>
+            </div>
+           </a>
+         </div>
+         </div>
+         {% endfor %}
+
+
            </section>
 
            <section class="col-md-12 recent" id="recent-quiz">
@@ -80,61 +113,9 @@
            <p>Last quizes scores, limit 4</p>
            </section>
 
-           <section class="row col-md-12">
 
-         <aside class="col-md-3">
-         <div id="category_title">Catégorie:</div>
 
-         {% set categoryArray = [] %}
 
-         {% for book  in books %}
-             {% if book.category not in categoryArray %}
-                 <ul id="category_item">
-                     <li>{{ book.category }} ({{ loop.index0 }})</li>
-                 </ul>
-                 {% set categoryArray = categoryArray|merge([book.category])  %}
-             {% endif %}
-         {% endfor %}
-
-         <div id="book_editor">Editeur</div>
-         {% set editorArray = [] %}
-
-         {% for book  in books %}
-             {% if book.editor not in  editorArray %}
-                 <ul id="category_item">
-                     <li>{{ book.editor }}</li>
-                 </ul>
-                 {% set  editorArray =  editorArray|merge([book.editor])  %}
-             {% endif %}
-         {% endfor %}
-
-         </aside>
-         <div id="list_books" class="col-md-9">
-          {% for book in books %}
-         <div class="col-md-3" id="book_item">
-         <a href="#">
-           <span class"hidden">{{ book.title }}</span>
-           <div class="illustration">
-              <img class="bookListItem_img" src="{{ asset('/images/ebook.jpg') }}" alt="test" />
-           </div>
-           <h3 class="bookItem_title">{{ book.title }}</h3>
-           <div class="libraryItem_detail">
-              <div class="libraryItem_description">
-                 <div class="libraryItem_descriptionTitle">{{ book.title }}</div>
-                 <div class="libraryItem_descriptionContent">{{ book.description }}</div>
-              </div>
-              <ul class="bookListItem_authors">
-                 <li class="bookListItem_authors_editor">{{ book.editor }}</li>
-                 <li class="bookListItem_authors_author">{{ book.author }}</li>
-              </ul>
-           </div>
-          </a>
-        </div>
-        {% endfor %}
-
-        </div>
-
-        </section>
         <section class="row">
         <h1>This a test and will be deleted after success</h1>
 

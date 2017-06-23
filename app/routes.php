@@ -18,7 +18,10 @@ foreach ($routes as $routeName => $data) {
     })->bind($routeName);
 }
 
-
 $app->get('/books', "Yekola\Controller\BookController::bookAction")->bind('books');
-$app->get('/books{category}', "Yekola\Controller\BookController::bookCategoryAction")->
-bind('book_category');
+$app->get('/books/{bookCategory}', "Yekola\Controller\BookController::bookCategoryAction")->
+bind('bookCategory');
+
+/*$app->get('/books/{category}', function() use($app) {
+  return $app['twig']->render('test.html.twig');
+});*/

@@ -2,56 +2,66 @@
 
 namespace Yekola\Domaine;
 
-class Book
+class Ask4Help
 {
     /**
-     * Book id.
+     * Asker id.
      *
      * @var integer
      */
     private $id;
 
     /**
-     * Book title.
+     * Asker first name.
      *
      * @var string
      */
-    private $title;
+    private $f_Name;
 
     /**
-     * Book author.
+     * Asker name.
      *
      * @var string
      */
-    private $author;
+    private $name;
 
     /**
-     * Book category.
+     * Asker country.
      *
      * @var string
      */
-    private $category;
+    private $country;
 
     /**
-     * Book editor.
+     * Asker city.
      *
      * @var string
      */
-    private $editor;
+    private $city;
 
     /**
-     * Book description.
-     *
+     * Asker adress.
      * @var string
      */
-    private $description;
+    private $adress;
 
     /**
-     * Book illustration.
-     *
+     * Asker tutor name.
      * @var string
      */
-    private $illustration;
+    private $n_Tutor;
+
+    /**
+     * Asker tutor phone.
+     * @var string
+     */
+    private $p_Tutor;
+
+    /**
+     * Asker message.
+     * @var string
+     */
+    private $message;
 
     public function getId() {
         return $this->id;
@@ -104,15 +114,6 @@ class Book
 
     public function setDescription($description) {
         $this->description = $description;
-        return $this;
-    }
-
-    public function getIllustration() {
-        return $this->illustration;
-    }
-
-    public function setIllustration($illustration) {
-        $this->illustration = $illustration;
         return $this;
     }
 }
